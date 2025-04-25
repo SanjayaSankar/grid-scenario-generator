@@ -1,0 +1,17 @@
+Extract the following parameters from the text description of a power grid scenario.
+ALWAYS provide values for all the required parameters, making reasonable assumptions if the information is not explicitly stated.
+
+Text description: {{ text }}
+
+Please extract the following parameters in JSON format:
+{
+  "num_buses": <integer between 2 and 10>,
+  "num_generators": <integer between 1 and 5>,
+  "num_loads": <integer between 1 and 5>,
+  "peak_load": <integer between 10 and 1000>,
+  "voltage_profile": <one of: "flat", "varied", "stressed">,
+  "reliability_level": <one of: "high", "medium", "low">,
+  "congestion_level": <one of: "high", "medium", "low">
+}
+
+Output ONLY the JSON object with no additional text.

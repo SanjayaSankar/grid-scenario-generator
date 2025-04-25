@@ -1,0 +1,32 @@
+Generate a power grid scenario with the following specifications:
+
+Network Configuration:
+- Number of buses: {{ num_buses }}
+- Number of generators: {{ num_generators }}
+- Number of loads: {{ num_loads }}
+{% if topology %}
+- Topology: {{ topology }}
+{% endif %}
+
+Generation:
+{% if generation_profile %}
+- Generation profile: {{ generation_profile }}
+{% endif %}
+{% if generator_types %}
+- Generator types: {{ generator_types|join(', ') }}
+{% endif %}
+
+Load:
+{% if load_profile %}
+- Load profile: {{ load_profile }}
+{% endif %}
+{% if load_types %}
+- Load types: {{ load_types|join(', ') }}
+{% endif %}
+
+Constraints:
+- Voltage limits: 0.95-1.05 p.u.
+- Line flow limits: As specified in line data
+- Generator limits: As specified in generator data
+
+Please generate a scenario that meets these specifications while maintaining power flow balance and respecting all constraints.
