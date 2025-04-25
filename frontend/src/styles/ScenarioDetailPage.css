@@ -1,0 +1,286 @@
+/* Scenario detail page specific styles */
+.scenario-detail-page {
+    padding-top: 1rem;
+  }
+  
+  .scenario-detail-page h1 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .scenario-detail-page h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-gold), transparent);
+  }
+  
+  /* Tabs styling */
+  .scenario-detail-page .nav-tabs {
+    border-color: var(--medium-gray);
+    margin-bottom: 2rem;
+  }
+  
+  .scenario-detail-page .nav-tabs .nav-link {
+    color: var(--white);
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all var(--transition-medium);
+    background-color: transparent;
+  }
+  
+  .scenario-detail-page .nav-tabs .nav-link:hover,
+  .scenario-detail-page .nav-tabs .nav-link:focus {
+    color: var(--primary-gold);
+    border-color: transparent;
+  }
+  
+  .scenario-detail-page .nav-tabs .nav-link.active {
+    color: var(--primary-gold);
+    border-bottom: 3px solid var(--primary-gold);
+    background-color: transparent;
+  }
+  
+  .scenario-detail-page .nav-tabs .nav-link.disabled {
+    color: var(--light-gray);
+    cursor: not-allowed;
+  }
+  
+  /* Cards styling */
+  .scenario-detail-page .card {
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.9), rgba(30, 30, 30, 0.9));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 1.5rem;
+    transition: all var(--transition-medium);
+  }
+  
+  .scenario-detail-page .card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+  
+  .scenario-detail-page .card-header {
+    background-color: rgba(30, 30, 30, 0.8);
+    color: var(--primary-gold);
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    display: flex;
+    align-items: center;
+  }
+  
+  .scenario-detail-page .card-body {
+    padding: 1.25rem;
+    color: var(--white);
+  }
+  
+  .scenario-detail-page .card-body p {
+    color: var(--white);
+  }
+  
+  .scenario-detail-page .card-body strong {
+    color: var(--primary-gold);
+  }
+  
+  .scenario-detail-page .card-footer {
+    background-color: rgba(30, 30, 30, 0.8);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 0.75rem 1.25rem;
+  }
+  
+  /* Overview tab styles */
+  .overview-tab .badge {
+    font-size: 0.9rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 12px;
+  }
+  
+  .overview-tab .list-group-item {
+    background-color: transparent;
+    border-color: rgba(212, 175, 55, 0.1);
+    padding: 0.75rem 1.25rem;
+    color: var(--white);
+  }
+  
+  .overview-tab .list-group-item:hover {
+    background-color: rgba(212, 175, 55, 0.05);
+  }
+  
+  /* Status badges */
+  .badge-success {
+    background-color: rgba(75, 181, 67, 0.2);
+    color: #4BB543;
+    border: 1px solid #4BB543;
+  }
+  
+  .badge-danger {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #DC3545;
+    border: 1px solid #DC3545;
+  }
+  
+  .badge-secondary {
+    background-color: rgba(108, 117, 125, 0.2);
+    color: var(--white);
+    border: 1px solid #6c757d;
+  }
+  
+  .badge-primary {
+    background-color: rgba(212, 175, 55, 0.2);
+    color: var(--primary-gold);
+    border: 1px solid var(--primary-gold);
+  }
+  
+  /* Tables styling */
+  .scenario-detail-page .table {
+    color: var(--white);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .scenario-detail-page .table thead th {
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+    font-weight: 600;
+    color: var(--primary-gold-light);
+    padding: 0.5rem;
+  }
+  
+  .scenario-detail-page .table tbody td {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 0.5rem;
+    color: var(--white);
+  }
+  
+  .scenario-detail-page .table-sm th,
+  .scenario-detail-page .table-sm td {
+    padding: 0.3rem;
+  }
+  
+  /* Visualization tab styles */
+  .visualization-tab .card {
+    height: 700px;
+    overflow: hidden;
+  }
+  
+  .visualization-tab .card-body {
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  /* Raw data tab styles */
+  .raw-data-tab .card {
+    min-height: 600px;
+    max-height: 800px;
+    overflow: hidden;
+  }
+  
+  .json-viewer {
+    overflow: auto;
+    height: 100%;
+    max-height: 700px;
+    padding: 1rem;
+    font-family: var(--font-monospace);
+    font-size: 0.9rem;
+    background-color: rgba(18, 18, 18, 0.7);
+    border-radius: var(--border-radius-sm);
+  }
+  
+  /* React JSON View theme customization */
+  .scenario-detail-page .react-json-view {
+    background-color: transparent !important;
+  }
+  
+  /* Validation tab styles */
+  .validation-tab .alert {
+    margin-bottom: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-width: 1px;
+    border-radius: var(--border-radius-md);
+  }
+  
+  .validation-tab .alert-success {
+    border-color: #4BB543;
+    color: #4BB543;
+  }
+  
+  .validation-tab .alert-danger {
+    border-color: #DC3545;
+    color: #DC3545;
+  }
+  
+  .validation-tab .alert-warning {
+    border-color: #FFD700;
+    color: #FFD700;
+  }
+  
+  .validation-tab ul.small {
+    margin-bottom: 0;
+    padding-left: 1.5rem;
+  }
+  
+  .validation-tab ul.small li {
+    margin-bottom: 0.25rem;
+  }
+  
+  .text-danger {
+    color: #ff6b6b !important;
+  }
+  
+  .text-success {
+    color: #6bff8d !important;
+  }
+  
+  .text-secondary {
+    color: var(--white) !important;
+  }
+  
+  /* Status icons */
+  .status-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+  
+  .status-icon-success {
+    background-color: rgba(75, 181, 67, 0.2);
+    color: #4BB543;
+    border: 1px solid #4BB543;
+  }
+  
+  .status-icon-danger {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #DC3545;
+    border: 1px solid #DC3545;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .scenario-detail-page .nav-tabs .nav-link {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+    }
+    
+    .scenario-detail-page .card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.75rem 1rem;
+    }
+    
+    .scenario-detail-page .table {
+      font-size: 0.8rem;
+    }
+  }

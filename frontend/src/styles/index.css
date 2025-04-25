@@ -1,0 +1,329 @@
+/* Base styling for the entire application */
+:root {
+  /* Main color palette */
+  --primary-gold: #D4AF37;
+  --primary-gold-light: #F6E05E;
+  --primary-gold-dark: #B8860B;
+  --black: #121212;
+  --dark-gray: #1E1E1E;
+  --medium-gray: #333333;
+  --light-gray: #555555;
+  --white: #FFFFFF;
+  --off-white: #F5F5F5;
+  
+  /* State colors */
+  --success: #4BB543;
+  --warning: #FFD700;
+  --danger: #DC3545;
+  --info: #0099FF;
+  
+  /* Typography */
+  --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-monospace: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Border radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: var(--black);
+  color: var(--off-white);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-gold);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  color: var(--primary-gold-light);
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-gold-light);
+  text-decoration: none;
+}
+
+button,
+.btn {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+/* Custom scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-gray);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-gold-dark);
+}
+
+/* Override Bootstrap themes with our custom colors */
+.btn-primary {
+  background-color: var(--primary-gold);
+  border-color: var(--primary-gold);
+  color: var(--black);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--primary-gold-dark) !important;
+  border-color: var(--primary-gold-dark) !important;
+  color: var(--black) !important;
+}
+
+.btn-outline-primary {
+  border-color: var(--primary-gold);
+  color: var(--primary-gold);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: var(--primary-gold) !important;
+  border-color: var(--primary-gold) !important;
+  color: var(--black) !important;
+}
+
+.card {
+  background-color: var(--dark-gray);
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 1.5rem;
+}
+
+.card-header {
+  background-color: var(--medium-gray);
+  border-bottom: 1px solid var(--light-gray);
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.alert {
+  border-radius: var(--border-radius-md);
+}
+
+.form-control,
+.form-select {
+  background-color: var(--medium-gray);
+  border: 1px solid var(--light-gray);
+  color: var(--white);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--medium-gray);
+  border-color: var(--primary-gold);
+  color: var(--white);
+  box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+}
+
+.badge {
+  padding: 0.35rem 0.65rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+}
+
+.badge-primary {
+  background-color: var(--primary-gold);
+  color: var(--black);
+}
+
+.table {
+  color: var(--off-white);
+}
+
+.table thead th {
+  border-bottom: 2px solid var(--primary-gold);
+  color: var(--primary-gold-light);
+  font-weight: 600;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.nav-tabs {
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.nav-tabs .nav-link {
+  color: var(--off-white);
+  background-color: transparent;
+  border: none;
+  padding: 0.75rem 1rem;
+  margin-right: 0.25rem;
+  font-weight: 600;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+  color: var(--primary-gold);
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--primary-gold);
+  background-color: var(--dark-gray);
+  border-bottom: 2px solid var(--primary-gold);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+.dropdown-menu {
+  background-color: var(--dark-gray);
+  border: 1px solid var(--light-gray);
+  box-shadow: var(--shadow-md);
+}
+
+.dropdown-item {
+  color: var(--off-white);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: var(--white);
+  background-color: var(--medium-gray);
+}
+
+.progress {
+  background-color: var(--medium-gray);
+  border-radius: var(--border-radius-sm);
+  height: 0.75rem;
+}
+
+.progress-bar {
+  background-color: var(--primary-gold);
+}
+
+.toast {
+  background-color: var(--dark-gray);
+  border: 1px solid var(--light-gray);
+}
+
+.toast-header {
+  background-color: var(--medium-gray);
+  color: var(--off-white);
+}
+
+.modal-content {
+  background-color: var(--dark-gray);
+  border: 1px solid var(--light-gray);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--light-gray);
+}
+
+/* Utility classes */
+.text-gold {
+  color: var(--primary-gold) !important;
+}
+
+.bg-gold {
+  background-color: var(--primary-gold) !important;
+}
+
+.border-gold {
+  border-color: var(--primary-gold) !important;
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, var(--primary-gold-dark) 0%, var(--primary-gold) 50%, var(--primary-gold-light) 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}

@@ -1,0 +1,229 @@
+/* Validate page specific styles */
+.validate-page {
+  padding-top: 1rem;
+}
+
+.validate-page h1 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.validate-page h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-gold), transparent);
+}
+
+.validate-page .lead {
+  color: var(--off-white);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+/* File upload area */
+.file-drop-area {
+  border: 2px dashed var(--light-gray);
+  border-radius: var(--border-radius-lg);
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all var(--transition-medium);
+  background-color: rgba(30, 30, 30, 0.6);
+  position: relative;
+}
+
+.file-drop-area.drag-active {
+  border-color: var(--primary-gold);
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.file-drop-area.has-file {
+  border-color: var(--primary-gold);
+  background-color: rgba(30, 30, 30, 0.8);
+}
+
+.file-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: -1;
+}
+
+.file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--off-white);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.selected-file {
+  text-align: center;
+}
+
+.file-name {
+  font-weight: 600;
+  color: var(--primary-gold);
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.file-size {
+  color: var(--light-gray);
+  font-size: 0.9rem;
+}
+
+/* JSON textarea */
+.json-textarea {
+  background-color: rgba(20, 20, 20, 0.8);
+  color: var(--off-white);
+  font-family: var(--font-monospace);
+  resize: vertical;
+  min-height: 300px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius-md);
+  padding: 1rem;
+  transition: all var(--transition-medium);
+}
+
+.json-textarea:focus {
+  background-color: rgba(25, 25, 25, 0.9);
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+}
+
+/* Validation result card */
+.validation-result-card {
+  background: linear-gradient(135deg, rgba(35, 35, 35, 0.9), rgba(25, 25, 25, 0.9));
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.validation-result-card .card-header {
+  background-color: rgba(25, 25, 25, 0.8);
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.validation-result-card .card-body {
+  padding: 1.5rem;
+}
+
+.validation-section-title {
+  color: var(--primary-gold);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.validation-issue h6 {
+  color: var(--primary-gold-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.issue-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.issue-list li {
+  margin-bottom: 0.25rem;
+  color: var(--off-white);
+}
+
+/* Validation action buttons */
+.validation-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Alert styling */
+.alert {
+  background-color: rgba(25, 25, 25, 0.8);
+  border-width: 1px;
+  border-radius: var(--border-radius-md);
+}
+
+.alert-success {
+  border-color: #4BB543;
+  color: #4BB543;
+}
+
+.alert-danger {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+  background-color: rgba(255, 77, 77, 0.1);
+}
+
+.alert-warning {
+  border-color: #FFD700;
+  color: #FFD700;
+}
+
+/* Text colors */
+.text-success {
+  color: #4BB543 !important;
+}
+
+.text-danger {
+  color: #DC3545 !important;
+}
+
+.text-warning {
+  color: #FFD700 !important;
+}
+
+/* Button with spinner */
+.btn .spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .validate-page .lead {
+    font-size: 1rem;
+  }
+  
+  .file-drop-area {
+    padding: 2rem 1rem;
+  }
+  
+  .validation-result-card .card-body {
+    padding: 1rem;
+  }
+  
+  .validation-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .validation-actions .btn {
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  .issue-list {
+    padding-left: 1rem;
+  }
+}

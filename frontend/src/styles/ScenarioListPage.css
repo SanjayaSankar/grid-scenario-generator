@@ -1,0 +1,225 @@
+/* Scenario list page specific styles */
+.scenario-list-page {
+    padding-top: 1rem;
+  }
+  
+  .scenario-list-page h1 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .scenario-list-page h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-gold), transparent);
+  }
+  
+  /* Filter card styling */
+  .filter-card {
+    background: linear-gradient(135deg, rgba(35, 35, 35, 0.9), rgba(25, 25, 25, 0.9));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .filter-card .card-body {
+    padding: 1.5rem;
+  }
+  
+  /* Search field styling */
+  .search-wrapper {
+    position: relative;
+  }
+  
+  .search-wrapper .form-control {
+    padding-right: 40px;
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 1px solid var(--light-gray);
+    color: var(--white);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-medium);
+  }
+  
+  .search-wrapper .form-control:focus {
+    background-color: rgba(40, 40, 40, 0.9);
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+  }
+  
+  .search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--primary-gold);
+    transition: all var(--transition-fast);
+  }
+  
+  .search-btn:hover,
+  .search-btn:focus {
+    color: var(--primary-gold-light);
+    background: none;
+    box-shadow: none;
+  }
+  
+  /* Filter select styling */
+  .filter-select-wrapper {
+    color: var(--primary-gold);
+  }
+  
+  .filter-select-wrapper .form-select {
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 1px solid var(--light-gray);
+    color: var(--white);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-medium);
+    padding-left: 0.75rem;
+  }
+  
+  .filter-select-wrapper .form-select:focus {
+    background-color: rgba(40, 40, 40, 0.9);
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+  }
+  
+  /* Scenario card styling */
+  .scenario-card {
+    background: linear-gradient(135deg, rgba(35, 35, 35, 0.9), rgba(25, 25, 25, 0.9));
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-medium);
+    overflow: hidden;
+  }
+  
+  .scenario-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-gold);
+  }
+  
+  .scenario-title {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .scenario-title a {
+    color: var(--primary-gold);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  
+  .scenario-title a:hover {
+    color: var(--primary-gold-light);
+  }
+  
+  .scenario-date {
+    color: var(--light-gray);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .badge-metric {
+    background-color: rgba(30, 30, 30, 0.8);
+    color: var(--off-white);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.65rem;
+  }
+  
+  /* Scenario action buttons */
+  .scenario-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  
+  /* Empty state styling */
+  .empty-state-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    color: var(--light-gray);
+    border: 1px solid var(--light-gray);
+  }
+  
+  /* Pagination styling */
+  .pagination-container {
+    margin-top: 2rem;
+  }
+  
+  .pagination .page-link {
+    background-color: rgba(30, 30, 30, 0.8);
+    color: var(--off-white);
+    border-color: var(--medium-gray);
+    transition: all var(--transition-fast);
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .pagination .page-link:hover {
+    background-color: rgba(40, 40, 40, 0.9);
+    color: var(--primary-gold);
+    border-color: var(--primary-gold);
+  }
+  
+  .pagination .page-item.active .page-link {
+    background-color: var(--primary-gold);
+    color: var(--black);
+    border-color: var(--primary-gold);
+    font-weight: 600;
+  }
+  
+  .pagination .page-item.disabled .page-link {
+    background-color: rgba(20, 20, 20, 0.8);
+    color: var(--light-gray);
+    border-color: var(--medium-gray);
+  }
+  
+  /* Loading spinner */
+  .spinner-gold {
+    color: var(--primary-gold);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .scenario-card .card-body {
+      padding: 1rem;
+    }
+    
+    .scenario-title {
+      font-size: 1.1rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .scenario-title .badge {
+      margin-left: 0;
+      margin-top: 0.25rem;
+    }
+    
+    .scenario-actions {
+      margin-top: 1rem;
+      justify-content: flex-start;
+    }
+  }

@@ -1,0 +1,241 @@
+/* App-specific styles */
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--black);
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem 0;
+    background-image: 
+      linear-gradient(to bottom, rgba(18, 18, 18, 0.95), rgba(18, 18, 18, 0.95)),
+      url('/public/grid-background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* Page container styling */
+  .container {
+    padding: 1.5rem;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(5px);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: var(--white);
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      padding: 2rem;
+    }
+  }
+  
+  /* Gold accent line */
+  .gold-line {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+    margin: 2rem 0;
+    width: 100%;
+  }
+  
+  /* Button styles */
+  .btn {
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-medium);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+  }
+  
+  .btn-lg {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .btn-gold {
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    color: var(--black);
+  }
+  
+  .btn-gold:hover,
+  .btn-gold:focus {
+    background-color: var(--primary-gold-dark);
+    border-color: var(--primary-gold-dark);
+    color: var(--black);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+  }
+  
+  .btn-outline-gold {
+    background-color: transparent;
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+  }
+  
+  .btn-outline-gold:hover,
+  .btn-outline-gold:focus {
+    background-color: var(--primary-gold);
+    color: var(--black);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+  }
+  
+  /* Card hover effect */
+  .hover-card {
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    border-color: var(--primary-gold-dark);
+  }
+  
+  /* Gold border effects */
+  .gold-border-left {
+    border-left: 3px solid var(--primary-gold);
+    padding-left: 1rem;
+  }
+  
+  .gold-border-bottom {
+    border-bottom: 3px solid var(--primary-gold);
+    padding-bottom: 0.5rem;
+  }
+  
+  .gold-border-top {
+    border-top: 3px solid var(--primary-gold);
+    padding-top: 0.5rem;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .fade-in-1 {
+    animation: fadeIn 0.5s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+  
+  .fade-in-2 {
+    animation: fadeIn 0.5s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+  
+  .fade-in-3 {
+    animation: fadeIn 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+  
+  /* Section headers with gold accents */
+  .section-header {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    color: var(--white);
+  }
+  
+  .section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-gold), transparent);
+  }
+  
+  /* Gold glow for highlights */
+  .gold-glow {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+    color: var(--primary-gold);
+  }
+  
+  /* Badge with gold border */
+  .badge-bordered {
+    border: 1px solid var(--primary-gold);
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--primary-gold);
+  }
+  
+  /* Gold checkbox */
+  .gold-checkbox .form-check-input:checked {
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+  }
+  
+  .gold-checkbox .form-check-input:focus {
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+  }
+  
+  /* Loading spinner with gold color */
+  .spinner-gold {
+    color: var(--primary-gold);
+  }
+  
+  /* Scrollbar customization */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-gold-dark) var(--dark-gray);
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--dark-gray);
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--primary-gold-dark);
+    border-radius: 20px;
+  }
+  
+  /* Error message component styling */
+  .error-alert {
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 1px solid #ff4d4d;
+    color: var(--white);
+    border-left: 5px solid #ff4d4d;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 8px rgba(255, 77, 77, 0.15);
+  }
+  
+  .error-alert h4 {
+    color: #ff4d4d;
+    font-weight: 600;
+  }
+  
+  .server-error-info {
+    background-color: rgba(255, 77, 77, 0.08);
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid #ff4d4d;
+  }
+  
+  .server-error-info p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--white);
+  }

@@ -1,0 +1,203 @@
+/* Scenario visualization specific styles */
+.scenario-visualization {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    overflow: hidden;
+    background-color: rgba(18, 18, 18, 0.9);
+    border-radius: var(--border-radius-md);
+  }
+  
+  .network-svg {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    background-color: transparent;
+  }
+  
+  /* Node styling */
+  .node {
+    cursor: pointer;
+    transition: transform var(--transition-medium);
+  }
+  
+  .node:hover {
+    transform: scale(1.1);
+  }
+  
+  .node circle {
+    transition: all var(--transition-medium);
+  }
+  
+  .node:hover circle {
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.7));
+  }
+  
+  .bus-label {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    fill: var(--off-white);
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .node:hover .bus-label {
+    fill: var(--primary-gold-light);
+    font-weight: bold;
+  }
+  
+  /* Link styling */
+  .link {
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all var(--transition-medium);
+  }
+  
+  .link.line {
+    stroke: #1E88E5;
+  }
+  
+  .link.transformer {
+    stroke: #6c757d;
+    stroke-dasharray: 5, 5;
+  }
+  
+  .link:hover {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+  }
+  
+  /* Generator and load symbols */
+  .generator-symbol {
+    transition: all var(--transition-medium);
+  }
+  
+  .node:hover .generator-symbol {
+    fill: #FFC107;
+    filter: drop-shadow(0 0 3px rgba(255, 193, 7, 0.7));
+  }
+  
+  .load-symbol {
+    transition: all var(--transition-medium);
+  }
+  
+  .node:hover .load-symbol {
+    fill: #FF5252;
+    filter: drop-shadow(0 0 3px rgba(255, 82, 82, 0.7));
+  }
+  
+  /* Legend styling */
+  .legend {
+    font-family: var(--font-primary);
+  }
+  
+  .legend-text {
+    font-size: 12px;
+    fill: var(--off-white);
+  }
+  
+  .chart-title {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+    fill: var(--primary-gold);
+  }
+  
+  /* Custom tooltip */
+  .network-tooltip {
+    position: absolute;
+    padding: 8px 12px;
+    background: rgba(30, 30, 30, 0.9);
+    color: var(--off-white);
+    border: 1px solid var(--primary-gold);
+    border-radius: var(--border-radius-sm);
+    pointer-events: none;
+    font-size: 12px;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+    max-width: 200px;
+  }
+  
+  .network-tooltip .tooltip-title {
+    font-weight: 600;
+    color: var(--primary-gold);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+  
+  /* Animation for a pulsing golden glow on voltage violations */
+  @keyframes voltageViolationPulse {
+    0% {
+      filter: drop-shadow(0 0 2px rgba(220, 53, 69, 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 8px rgba(220, 53, 69, 0.8));
+    }
+    100% {
+      filter: drop-shadow(0 0 2px rgba(220, 53, 69, 0.5));
+    }
+  }
+  
+  .voltage-violation {
+    animation: voltageViolationPulse 2s infinite;
+  }
+  
+  /* Controls panel */
+  .visualization-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--border-radius-md);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .control-button {
+    background: rgba(51, 51, 51, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    color: var(--primary-gold);
+    border-radius: var(--border-radius-sm);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+  }
+  
+  .control-button:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .scenario-visualization {
+      min-height: 400px;
+    }
+    
+    .network-svg {
+      min-height: 400px;
+    }
+    
+    .legend-text {
+      font-size: 10px;
+    }
+    
+    .bus-label {
+      font-size: 10px;
+    }
+    
+    .chart-title {
+      font-size: 14px;
+    }
+  }
